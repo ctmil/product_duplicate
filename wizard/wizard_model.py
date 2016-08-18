@@ -22,7 +22,7 @@ class product_template_duplicate(models.TransientModel):
 	def confirm_name(self):
 		active_id = self.env.context['active_id']
 		product_tmpl = self.env['product.template'].browse(active_id)
-		if picking:
+		if product_tmpl:
 			vals = {
 				'name': self.name,
 				'purchase_ok': product_tmpl.purchase_ok,
