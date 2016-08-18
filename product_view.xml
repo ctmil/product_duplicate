@@ -5,10 +5,12 @@
          <record id="product_template_duplicate_form" model="ir.ui.view">
             <field name="name">product.template.duplicate.form</field>
             <field name="model">product.template</field>
-            <field name="inherit_id" ref="product_template_form_view" />
+            <field name="inherit_id" ref="product.product_template_form_view" />
             <field name="arch" type="xml">
-                <xpath expr="//form[@string='Product']/header" position="after">
-                  <button name="action_duplicate"  string="Duplicar" type="object" class="oe_highlight" groups="base.group_user"/>
+                <xpath expr="//form[@string='Product']" position="after">
+			<header>
+	                  <button name="action_duplicate"  string="Duplicar" type="object" class="oe_highlight" groups="base.group_user"/>
+			</header>
                 </xpath>
             </field> 
         </record>
