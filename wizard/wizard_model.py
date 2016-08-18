@@ -21,11 +21,23 @@ class product_template_duplicate(models.TransientModel):
 	@api.multi
 	def confirm_name(self):
 		active_id = self.env.context['active_id']
-		import pdb;pdb.set_trace()
 		product_tmpl = self.env['product.template'].browse(active_id)
 		if picking:
 			vals = {
-				'name': self.name
+				'name': self.name,
+				'purchase_ok': product_tmpl.purchase_ok,
+				'sale_ok': product_tmpl.sale_ok,
+				'active': product_tmpl.active,
+				'categ_id': product_tmpl.categ_id.id,
+				'company_id': product_tmpl.company_id.id,
+				'default_code': product_tmpl.default_code,
+				'description': product_tmpl.description,
+				'description_sale': product_tmpl.description_sale,
+				'description_purchase': product_tmpl.description_purchase,
+				'list_price': product_tmpl.list_price,
+				'lst_price': product_tmpl.lst_price,
+				'standard_price': product_tmpl.standard_price,
+				'taxes_id': [(6,0,product_tmpl.taxes_id.ids)],
 				}
-			return_id = picking.write(vals)
+			product_tmpl_id = self.env['product.template'].create(vals)
 		return None
