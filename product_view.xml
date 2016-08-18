@@ -7,7 +7,7 @@
             <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_form_view" />
             <field name="arch" type="xml">
-                <xpath expr="//form[@string='Product']/sheet" position="after">
+                <xpath expr="//form[@string='Product']/sheet" position="before">
 	                  <button name="action_duplicate"  string="Duplicar" type="object" class="oe_highlight" groups="base.group_user"/>
                 </xpath>
             </field> 
