@@ -16,7 +16,7 @@ _logger = logging.getLogger(__name__)
 class product_template_duplicate(models.TransientModel):
         _name = 'product.template.duplicate'
 
-	new_name = fields.Char(string='Nuevo nombre',required=True)
+	name = fields.Char(string='Nuevo nombre',required=True)
 
 	@api.multi
 	def confirm_name(self):
