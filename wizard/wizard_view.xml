@@ -1,0 +1,18 @@
+<openerp>
+	<data>
+
+		<record id="product_template_duplicate" model="ir.ui.view">
+			<field name="name">Duplicar</field>
+			<field name="model">product.template.duplicate</field>
+			<field name="arch" type="xml">
+				<form string="Duplicar">
+					<group>
+						<field name="name" />
+					</group>
+					<button name="confirm_name" type="object" string="Duplicar" />
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>
